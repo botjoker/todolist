@@ -98,12 +98,13 @@ export default {
     }
   },
   created() {
-    if (localStorage.appid) {
-      this.appId = localStorage.appid;
+    if(this.$cookie.get('appid')) {
+      this.appId = this.$cookie.get('appid');
+      this.getTasks();
     } else {
-      localStorage.appid = Math.floor(new Date().valueOf() * Math.random());
-    }
-    this.getTasks();
+      this.appId = Math.floor(new Date().valueOf() * Math.random());
+      this.$cookie.set('appid', this.appId, 15);
+    }    
   },
 }
 </script>

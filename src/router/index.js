@@ -4,6 +4,8 @@ import Tasks from '@/components/Tasks';
 import Task from '@/components/Task';
 
 Vue.use(Router);
+var VueCookie = require('vue-cookie');
+Vue.use(VueCookie);
 
 export default new Router({
   routes: [
